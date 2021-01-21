@@ -1,8 +1,12 @@
-import React from "react";
-import Switch from "@material-ui/core/Switch";
+import React, { useState } from "react";
 import useStyles from "../styles/DashboardTitleStyles";
+import CostumSwitch from "./CostumSwitch";
 
 function DashboardTitle() {
+  const [state, setState] = useState({ switch: true });
+  const handleChange = (e) => {
+    setState({[e.target.name]: e.target.checked });
+  };
   const classes = useStyles();
   const {
     dashboardTitle,
@@ -17,10 +21,8 @@ function DashboardTitle() {
         <h3 className={dashboardSubheading}>Total Followers: 23,004</h3>
       </div>
       <div className={dashboardTheme}>
-        Dark mode{" "}
-        <span>
-          <Switch />
-        </span>
+        <span>Dark Mode</span>
+        <CostumSwitch handleChange={handleChange}  checked={state.checked}/>
       </div>
     </div>
   );

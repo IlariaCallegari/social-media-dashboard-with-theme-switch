@@ -11,8 +11,15 @@ const useStyles = createUseStyles({
   },
   dashboardSubheading: {
     color: "hsl(228, 34%, 66%)",
+    marginTop: "0.1rem",
   },
-  dashboardTheme: { color: "hsl(228, 34%, 66%)" },
+  dashboardTheme: { 
+    width: "8.5rem",
+    color: "hsl(228, 34%, 66%)",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center"
+  },
 });
 
 export default useStyles;
