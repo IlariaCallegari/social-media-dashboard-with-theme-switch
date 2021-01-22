@@ -1,12 +1,13 @@
 import React from "react";
 import DashboardTitle from "./DashboardTitle";
 import SocialMediaBox from "./SocialMediaBox";
-import socialMediaData from "../SocialMediaData";
+import OverviewBox from "./OverviewBox";
+import { socialMediaData, overviewData } from "../SocialMediaData";
 import useStyles from "../styles/DashboardStyles";
 
 function Dashboard() {
   const classes = useStyles();
-  const { container } = classes;
+  const { container, overview, overviewContainer } = classes;
   return (
     <React.Fragment>
       <DashboardTitle />
@@ -22,6 +23,18 @@ function Dashboard() {
             socialMedia={social.socialMedia}
             color={social.color}
             key={social.socialMedia}
+          />
+        ))}
+      </section>
+      <h2 className={overview}>Overview - Today</h2>
+      <section className={overviewContainer}>
+        {overviewData.map((social) => (
+          <OverviewBox
+            key={social.SocialMedia}
+            likes={social.likes}
+            views={social.views}
+            logo={social.logo}
+            socialMedia={social.socialMedia}
           />
         ))}
       </section>

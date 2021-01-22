@@ -4,26 +4,29 @@ const useStyles = createUseStyles({
   externalBox: {
     height: "15.9375rem",
     width: "22.5%",
-    cursor: "pointer",
     borderRadius: 5,
     overflow: "hidden",
-    zIndex: -1,
     position: "relative",
   },
   internalBox: {
-    background: "hsl(228, 28%, 20%)",
+    backgroundColor: "hsl(228, 28%, 20%)",
     zIndex: 2,
     height: "99%",
     width: "100%",
     position: "absolute",
     bottom: 0,
-    overflow: "hidden",
+    borderRadius: 5,
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-around",
     alignItems: "center",
     color: "hsl(228, 34%, 66%)",
     fontWeight: "700",
+    cursor: "pointer",
+    transition: "background 1.5s",
+    "&:hover": {
+      backgroundColor: "hsl(228, 25%, 27%)",
+    }
   },
   account: {
       display: "flex",
