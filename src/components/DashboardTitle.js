@@ -1,14 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import useStyles from "../styles/DashboardTitleStyles";
 import CostumSwitch from "./CostumSwitch";
 
-function DashboardTitle() {
+function DashboardTitle({handleChange, isChecked}) {
   //######****THINGS TO DO****######
   //move state logic to dashboard and set dashboard title as a pure component
-  const [state, setState] = useState({ switch: true });
-  const handleChange = (e) => {
-    setState({[e.target.name]: e.target.checked });
-  };
+  
   const classes = useStyles();
   const {
     dashboardTitle,
@@ -24,7 +21,7 @@ function DashboardTitle() {
       </div>
       <div className={dashboardTheme}>
         <span>Dark Mode</span>
-        <CostumSwitch handleChange={handleChange}  checked={state.switch}/>
+        <CostumSwitch handleChange={handleChange}  checked={isChecked}/>
       </div>
     </div>
   );

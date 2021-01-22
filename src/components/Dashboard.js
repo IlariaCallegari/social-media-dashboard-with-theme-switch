@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import DashboardTitle from "./DashboardTitle";
 import SocialMediaBox from "./SocialMediaBox";
 import OverviewBox from "./OverviewBox";
@@ -6,11 +6,15 @@ import { socialMediaData, overviewData } from "../SocialMediaData";
 import useStyles from "../styles/DashboardStyles";
 
 function Dashboard() {
+  const [state, setState] = useState({ isChecked: true });
+  const handleChange = (e) => {
+    setState({isChecked: e.target.checked });
+  };
   const classes = useStyles();
   const { container, overview, overviewContainer } = classes;
   return (
     <React.Fragment>
-      <DashboardTitle />
+      <DashboardTitle handleChange={handleChange} isChecked={state.isChecked}/>
       <section className={container}>
         {socialMediaData.map((social) => (
           <SocialMediaBox
