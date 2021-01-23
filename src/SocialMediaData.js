@@ -52,15 +52,15 @@ const overviewData = [
     logo: iconFB,
     likes: {
         type: "Likes",
-        totLikes: "52",
-        likesStat: "2%",
-        likeIsUp: false,
+        tot: "52",
+        stat: "2%",
+        isUp: false,
     },
     views: {
         type: "Page Views",
-        totViews: "87",
-        viewIsUp: true,
-        viewsStat: "3%"
+        tot: "87",
+        isUp: true,
+        stat: "3%"
     },
   },
   {
@@ -68,15 +68,15 @@ const overviewData = [
     logo: iconIG,
     likes: {
         type: "Likes",
-        totLikes: "5462",
-        likesStat: "2257%",
-        likeIsUp: true,
+        tot: "5462",
+        stat: "2257%",
+        isUp: true,
     },
     views: {
         type: "Page Views",
-        totViews: "52K",
-        viewIsUp: true,
-        viewsStat: "1375%"
+        tot: "52K",
+        isUp: true,
+        stat: "1375%"
     },
   },
   {
@@ -84,15 +84,15 @@ const overviewData = [
     logo: iconTW,
     likes: {
         type: "Likes",
-        totLikes: "507",
-        likesStat: "553%",
-        likeIsUp: true,
+        tot: "507",
+        stat: "553%",
+        isUp: true,
     },
     views: {
         type: "Retweets",
-        totViews: "117",
-        viewIsUp: true,
-        viewsStat: "303%"
+        tot: "117",
+        isUp: true,
+        stat: "303%"
     },
   },
   {
@@ -100,15 +100,15 @@ const overviewData = [
     logo: iconYT,
     likes: {
         type: "Likes",
-        totLikes: "107",
-        likesStat: "19%",
-        likeIsUp: false,
+        tot: "107",
+        stat: "19%",
+        isUp: false,
     },
     views: {
         type: "Total Views",
-        totViews: "1407",
-        viewIsUp: false,
-        viewsStat: "12%"
+        tot: "1407",
+        isUp: false,
+        stat: "12%"
     },
   },
 ];

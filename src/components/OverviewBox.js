@@ -1,4 +1,4 @@
-import React from "react";
+import React, {memo} from "react";
 import useStyles from "../styles/OverviewBoxStyle";
 import up from "../images/icon-up.svg";
 import down from "../images/icon-down.svg";
@@ -11,28 +11,28 @@ function OverviewBox({ likes, views, logo, socialMedia }) {
       <div className={box}>
         <p>{likes.type}</p>
         <img src={`${logo}`} alt={`${socialMedia} logo`} />
-        <p className={total}>{likes.totLikes}</p>
+        <p className={total}>{likes.tot}</p>
         <div>
           <img
-            src={likes.likeIsUp ? `${up}` : `${down}`}
-            alt={likes.likeIsUp ? "up arrow" : "down arrow"}
+            src={likes.isUp ? `${up}` : `${down}`}
+            alt={likes.isUp ? "up arrow" : "down arrow"}
           />
-          <span>{likes.likesStat}</span>
+          <span style={{color: likes.isUp ? "hsl(163, 72%, 41%)" : "hsl(356, 69%, 56%)" }}>{likes.stat}</span>
         </div>
       </div>
       <div className={box}>
         <p>{views.type}</p>
         <img src={`${logo}`} alt={`${socialMedia} logo`} />
-        <p className={total}>{views.totViews}</p>
+        <p className={total}>{views.tot}</p>
         <div>
           <img
-            src={likes.viewIsUp ? `${up}` : `${down}`}
-            alt={likes.viewIsUp ? "up arrow" : "down arrow"}
+            src={views.isUp ? `${up}` : `${down}`}
+            alt={views.isUp ? "up arrow" : "down arrow"}
           />
-          <span>{views.viewsStat}</span>
+          <span style={{color: views.isUp ? "hsl(163, 72%, 41%)" : "hsl(356, 69%, 56%)" }}>{views.stat}</span>
         </div>
       </div>
     </React.Fragment>
   );
 }
-export default OverviewBox;
+export default memo(OverviewBox);

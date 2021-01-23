@@ -1,11 +1,8 @@
-import React from "react";
+import React, {memo} from "react";
 import useStyles from "../styles/DashboardTitleStyles";
 import CostumSwitch from "./CostumSwitch";
 
 function DashboardTitle({handleChange, isChecked}) {
-  //######****THINGS TO DO****######
-  //move state logic to dashboard and set dashboard title as a pure component
-  
   const classes = useStyles();
   const {
     dashboardTitle,
@@ -27,4 +24,4 @@ function DashboardTitle({handleChange, isChecked}) {
   );
 }
 
-export default DashboardTitle;
+export default memo(DashboardTitle) ;
