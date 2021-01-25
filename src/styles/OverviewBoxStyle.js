@@ -41,6 +41,12 @@ const useStyles = createUseStyles({
     height: "0.25rem",
     width: "0.5rem",
   },
+  likesStats: ({likes}) => ({
+    color: likes.isUp ? "hsl(163, 72%, 41%)" : "hsl(356, 69%, 56%)"
+  }), 
+  viewsStats: ({views}) => ({
+    color: views.isUp ? "hsl(163, 72%, 41%)" : "hsl(356, 69%, 56%)"
+  }), 
 });
 
 export default useStyles;

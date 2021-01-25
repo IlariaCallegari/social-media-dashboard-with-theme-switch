@@ -1,11 +1,12 @@
 import { createUseStyles } from "react-jss";
 
 const useStyles = createUseStyles({
-  dashboard: {
+  dashboard: (theme) => ({
     height: "100%",
     width: "100%",
     padding: "2.25rem 10.125rem 2.25rem 12.5rem",
-  },
+    backgroundColor: (theme) ? "hsl(230, 17%, 14%)" : "hsl(0, 0%, 100%)",
+  }),
 
   container: {
     display: "flex",

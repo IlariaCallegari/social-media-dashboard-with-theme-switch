@@ -13,7 +13,7 @@ function SocialMediaBox({
   socialMedia,
   color,
 }) {
-  const classes = useStyles();
+  const classes = useStyles({ color, isUp });
   const {
     externalBox,
     internalBox,
@@ -23,10 +23,7 @@ function SocialMediaBox({
     todayStats,
   } = classes;
   return (
-    <div
-      className={externalBox}
-      style={{ backgroundImage: `${color}`, background: `${color}` }}
-    >
+    <div className={externalBox}>
       <div className={internalBox}>
         <div className={account}>
           <img src={logo} alt={`${socialMedia} logo`} />
@@ -36,10 +33,7 @@ function SocialMediaBox({
           <p className={totFollowers}>{totalFollowers}</p>
           <p className={followers}>{followerType}</p>
         </div>
-        <div
-          className={todayStats}
-          style={{ color: isUp ? "hsl(163, 72%, 41%)" : "hsl(356, 69%, 56%)" }}
-        >
+        <div className={todayStats}>
           <img
             src={isUp ? `${up}` : `${down}`}
             alt={isUp ? "up arrow" : "down arrow"}

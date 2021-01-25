@@ -7,17 +7,26 @@ import useStyles from "../styles/DashboardStyles";
 import { socialMediaData, overviewData } from "../SocialMediaData";
 
 function Dashboard() {
+  //get theme and set the state
   const { toggleTheme, theme } = useContext(ThemeContext);
   const [state, setState] = useState({ isChecked: true });
+  
+  //grabs the classes from the stylesheet
+  const classes = useStyles({theme});
+  const { container, overview, overviewContainer, dashboard } = classes;
 
+  //handle switch change
   const handleChange = (e) => {
     setState({ isChecked: e.target.checked });
     toggleTheme();
   };
-  const classes = useStyles();
-  const { container, overview, overviewContainer, dashboard } = classes;
   return (
-    <div className={dashboard} style={{backgroundColor: theme? "hsl(230, 17%, 14%)" : "hsl(0, 0%, 100%)"}}>
+    <div
+      className={dashboard}
+      // style={{
+      //   backgroundColor: theme ? "hsl(230, 17%, 14%)" : "hsl(0, 0%, 100%)",
+      // }}
+    >
       <DashboardTitle handleChange={handleChange} isChecked={state.isChecked} />
 
       <section className={container}>

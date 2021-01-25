@@ -1,13 +1,15 @@
 import { createUseStyles } from "react-jss";
 
 const useStyles = createUseStyles({
-  externalBox: {
+  externalBox: ({color}) => ({
     height: "15.9375rem",
     width: "22.5%",
     borderRadius: 5,
     overflow: "hidden",
     position: "relative",
-  },
+    backgroundImage: `${color}`, 
+    background: `${color}` 
+  }),
   internalBox: {
     backgroundColor: "hsl(228, 28%, 20%)",
     zIndex: 2,
@@ -47,7 +49,9 @@ const useStyles = createUseStyles({
     letterSpacing: "0.25rem",
     fontWeight: "400",
   },
-  todayStats: {
+  todayStats: ({isUp}) => ({
+    color: isUp? "hsl(163, 72%, 41%)" : "hsl(356, 69%, 56%)",
+    
     "& img": {
       marginRight: "0.1rem",
       marginLeft: "0.1rem",
@@ -56,7 +60,7 @@ const useStyles = createUseStyles({
       marginRight: "0.1rem",
       marginLeft: "0.1rem",
     },
-  },
+  }),
 });
 
 export default useStyles;
