@@ -1,8 +1,8 @@
-import React, {memo} from "react";
+import React from "react";
 import useStyles from "../styles/DashboardTitleStyles";
 import CostumSwitch from "./CostumSwitch";
 
-function DashboardTitle({handleChange, isChecked}) {
+function DashboardTitle({ handleChange, isChecked }) {
   const classes = useStyles();
   const {
     dashboardTitle,
@@ -18,10 +18,13 @@ function DashboardTitle({handleChange, isChecked}) {
       </div>
       <div className={dashboardTheme}>
         <span>Dark Mode</span>
-        <CostumSwitch handleChange={handleChange}  checked={isChecked}/>
+        <CostumSwitch
+          handleChange={handleChange}
+          checked={isChecked}
+        />
       </div>
     </div>
   );
 }
 
-export default memo(DashboardTitle) ;
+export default DashboardTitle;

@@ -1,20 +1,25 @@
-import React, {useState} from "react";
+import React, { useState, useContext } from "react";
 import DashboardTitle from "./DashboardTitle";
 import SocialMediaBox from "./SocialMediaBox";
 import OverviewBox from "./OverviewBox";
-import { socialMediaData, overviewData } from "../SocialMediaData";
+import { ThemeContext } from "../contexts/ThemeContext";
 import useStyles from "../styles/DashboardStyles";
+import { socialMediaData, overviewData } from "../SocialMediaData";
 
 function Dashboard() {
+  const { toggleTheme, theme } = useContext(ThemeContext);
   const [state, setState] = useState({ isChecked: true });
+
   const handleChange = (e) => {
-    setState({isChecked: e.target.checked });
+    setState({ isChecked: e.target.checked });
+    toggleTheme();
   };
   const classes = useStyles();
-  const { container, overview, overviewContainer } = classes;
+  const { container, overview, overviewContainer, dashboard } = classes;
   return (
-    <React.Fragment>
-      <DashboardTitle handleChange={handleChange} isChecked={state.isChecked}/>
+    <div className={dashboard} style={{backgroundColor: theme? "hsl(230, 17%, 14%)" : "hsl(0, 0%, 100%)"}}>
+      <DashboardTitle handleChange={handleChange} isChecked={state.isChecked} />
+
       <section className={container}>
         {socialMediaData.map((social) => (
           <SocialMediaBox
@@ -42,7 +47,7 @@ function Dashboard() {
           />
         ))}
       </section>
-    </React.Fragment>
+    </div>
   );
 }
 

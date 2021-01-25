@@ -1,14 +1,18 @@
+import React from "react";
 import Dashboard from "./components/Dashboard";
 import useStyles from "./styles/AppStyles";
+import { ThemeProvider } from "./contexts/ThemeContext";
 
 function App() {
   const classes = useStyles();
-  const {App} = classes;
+  const { App } = classes;
 
   return (
-    <div className={App}>
-      <Dashboard />
-    </div>
+    <ThemeProvider>
+      <div className={App}>
+        <Dashboard />
+      </div>
+    </ThemeProvider>
   );
 }
 
