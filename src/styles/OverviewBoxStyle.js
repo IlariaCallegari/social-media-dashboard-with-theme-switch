@@ -1,18 +1,21 @@
 import { createUseStyles } from "react-jss";
+import colors from "./utils/variables";
 
 const useStyles = createUseStyles({
-  box: {
+  box: ({ isDark }) => ({
     display: "flex",
     width: "22.5%",
     height: "40%",
-    backgroundColor: "hsl(228, 28%, 20%)",
-    color: "hsl(228, 34%, 66%)",
+    backgroundColor: isDark
+      ? colors.darkDesaturatedBlueCardBG
+      : colors.lightGrayishBlueCardBG,
+    color: isDark ? colors.desaturatedBlueText : colors.darkGrayishBlueText,
     fontWeight: "700",
     flexWrap: "wrap",
     alignItems: "center",
     borderRadius: 5,
     "&:hover": {
-      backgroundColor: "hsl(228, 25%, 27%)",
+      backgroundColor: isDark ? colors.cardOnHoverDark : colors.cardOnHoverLight,
     },
     "& > div": {
       width: "50%",
@@ -28,25 +31,25 @@ const useStyles = createUseStyles({
         justifyContent: "flex-end",
       },
     },
-  },
+  }),
   imgLogo: {
-    height: "1.25rem",
-    width: "1.25rem",
+    height: "1.50rem",
+    width: "1.50rem",
   },
-  total: {
-    fontSize: "2rem",
-    color: "hsl(0, 0%, 100%)",
-  },
+  total: ({ isDark }) => ({
+    fontSize: "1.8rem",
+    color: isDark ? colors.white : colors.veryDarkBlue,
+  }),
   arrow: {
     height: "0.25rem",
     width: "0.5rem",
   },
-  likesStats: ({likes}) => ({
-    color: likes.isUp ? "hsl(163, 72%, 41%)" : "hsl(356, 69%, 56%)"
-  }), 
-  viewsStats: ({views}) => ({
-    color: views.isUp ? "hsl(163, 72%, 41%)" : "hsl(356, 69%, 56%)"
-  }), 
+  likesStats: ({ likes }) => ({
+    color: likes.isUp ? colors.limeGreen : colors.brightRed,
+  }),
+  viewsStats: ({ views }) => ({
+    color: views.isUp ? colors.limeGreen : colors.brightRed,
+  }),
 });
 
 export default useStyles;

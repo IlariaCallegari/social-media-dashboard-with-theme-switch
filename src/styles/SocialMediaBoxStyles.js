@@ -1,17 +1,20 @@
 import { createUseStyles } from "react-jss";
+import colors from "./utils/variables";
 
 const useStyles = createUseStyles({
-  externalBox: ({color}) => ({
+  externalBox: ({ color }) => ({
     height: "15.9375rem",
     width: "22.5%",
     borderRadius: 5,
     overflow: "hidden",
     position: "relative",
-    backgroundImage: `${color}`, 
-    background: `${color}` 
+    backgroundImage: `${color}`,
+    background: `${color}`,
   }),
-  internalBox: {
-    backgroundColor: "hsl(228, 28%, 20%)",
+  internalBox: ({ isDark }) => ({
+    backgroundColor: isDark
+      ? colors.darkDesaturatedBlueCardBG
+      : colors.lightGrayishBlueCardBG,
     zIndex: 2,
     height: "99%",
     width: "100%",
@@ -22,36 +25,35 @@ const useStyles = createUseStyles({
     flexDirection: "column",
     justifyContent: "space-around",
     alignItems: "center",
-    color: "hsl(228, 34%, 66%)",
+    color: isDark ? colors.desaturatedBlueText : colors.darkGrayishBlueText,
     fontWeight: "700",
     cursor: "pointer",
-    transition: "background 1.5s",
     "&:hover": {
-      backgroundColor: "hsl(228, 25%, 27%)",
-    }
-  },
+      backgroundColor: isDark ? colors.cardOnHoverDark : colors.cardOnHoverLight,
+    },
+  }),
   account: {
-      display: "flex",
-      alignItems: "center",
+    display: "flex",
+    alignItems: "center",
     "& img": {
-        marginRight: "0.3rem",
-      },
+      marginRight: "0.3rem",
+    },
   },
-  totFollowers: {
+  totFollowers: ({ isDark }) => ({
     fontSize: "3.5rem",
     textTransform: "uppercase",
     textAlign: "center",
-    color: "hsl(0, 0%, 100%)",
-  },
+    color: isDark ? colors.white : colors.veryDarkBlue,
+  }),
   followers: {
     textAlign: "center",
     textTransform: "uppercase",
     letterSpacing: "0.25rem",
     fontWeight: "400",
   },
-  todayStats: ({isUp}) => ({
-    color: isUp? "hsl(163, 72%, 41%)" : "hsl(356, 69%, 56%)",
-    
+  todayStats: ({ isUp }) => ({
+    color: isUp ? colors.limeGreen : colors.brightRed,
+
     "& img": {
       marginRight: "0.1rem",
       marginLeft: "0.1rem",

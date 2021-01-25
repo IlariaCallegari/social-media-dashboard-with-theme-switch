@@ -8,11 +8,11 @@ import { socialMediaData, overviewData } from "../SocialMediaData";
 
 function Dashboard() {
   //get theme and set the state
-  const { toggleTheme, theme } = useContext(ThemeContext);
+  const { toggleTheme, isDark } = useContext(ThemeContext);
   const [state, setState] = useState({ isChecked: true });
   
   //grabs the classes from the stylesheet
-  const classes = useStyles({theme});
+  const classes = useStyles(isDark);
   const { container, overview, overviewContainer, dashboard } = classes;
 
   //handle switch change
@@ -23,9 +23,6 @@ function Dashboard() {
   return (
     <div
       className={dashboard}
-      // style={{
-      //   backgroundColor: theme ? "hsl(230, 17%, 14%)" : "hsl(0, 0%, 100%)",
-      // }}
     >
       <DashboardTitle handleChange={handleChange} isChecked={state.isChecked} />
 

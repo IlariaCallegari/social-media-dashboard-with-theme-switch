@@ -1,13 +1,13 @@
 import { createUseStyles } from "react-jss";
+import colors from "../styles/utils/variables";
 
 const useStyles = createUseStyles({
-  dashboard: (theme) => ({
+  dashboard: (isDark) => ({
     height: "100%",
     width: "100%",
     padding: "2.25rem 10.125rem 2.25rem 12.5rem",
-    backgroundColor: (theme) ? "hsl(230, 17%, 14%)" : "hsl(0, 0%, 100%)",
+    backgroundColor: isDark ? colors.veryDarkBlue : colors.white,
   }),
-
   container: {
     display: "flex",
     alignItems: "center",
@@ -15,11 +15,12 @@ const useStyles = createUseStyles({
     marginTop: "3.5%",
     marginBottom: "4%",
   },
-  overview: {
+  overview: (isDark) => ({
     fontWeight: "700",
     fontSize: "1.5rem",
     marginBottom: "1.5%",
-  },
+    color: isDark ? colors.white : colors.darkGrayishBlueText,
+  }),
   overviewContainer: {
     display: "flex",
     flexWrap: "wrap",

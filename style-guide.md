@@ -36,6 +36,7 @@ The designs were created to the following widths:
 - Dark Desaturated Blue (Card BG): hsl(228, 28%, 20%)
 - Desaturated Blue (Text): hsl(228, 34%, 66%)
 - White (Text): hsl(0, 0%, 100%)
+- Card on Hover: hsl(228, 25%, 27%)
 
 #### Light Theme
 
@@ -44,6 +45,7 @@ The designs were created to the following widths:
 - Light Grayish Blue (Card BG): hsl(227, 47%, 96%)
 - Dark Grayish Blue (Text): hsl(228, 12%, 44%)
 - Very Dark Blue (Text): hsl(230, 17%, 14%)
+- Card on Hover: hsl(228, 33%, 91%)
 
 ## Typography
 

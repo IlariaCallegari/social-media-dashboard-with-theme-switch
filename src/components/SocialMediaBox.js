@@ -1,7 +1,8 @@
-import React from "react";
+import React, {useContext} from "react";
 import useStyles from "../styles/SocialMediaBoxStyles";
 import up from "../images/icon-up.svg";
 import down from "../images/icon-down.svg";
+import {ThemeContext} from "../contexts/ThemeContext"
 
 function SocialMediaBox({
   logo,
@@ -13,7 +14,8 @@ function SocialMediaBox({
   socialMedia,
   color,
 }) {
-  const classes = useStyles({ color, isUp });
+  const {isDark} = useContext(ThemeContext)
+  const classes = useStyles({ color, isUp, isDark});
   const {
     externalBox,
     internalBox,

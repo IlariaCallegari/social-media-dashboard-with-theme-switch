@@ -3,7 +3,6 @@ import Switch from "@material-ui/core/Switch";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import { withStyles } from "@material-ui/core/styles";
 
-
 //export styles in own file
 const styles = {
   form: {
@@ -67,7 +66,9 @@ function CostumSwitch({ classes, handleChange, checked }) {
   return (
     <FormControlLabel
       className={classes.form}
-      control={<DashSwitch onChange={handleChange} name="switch" checked={checked} />}
+      control={
+        <DashSwitch onChange={handleChange} name="switch" checked={checked} />
+      }
     />
   );
 }

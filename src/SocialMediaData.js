@@ -2,6 +2,7 @@ import iconFB from "./images/icon-facebook.svg";
 import iconIG from "./images/icon-instagram.svg";
 import iconTW from "./images/icon-twitter.svg";
 import iconYT from "./images/icon-youtube.svg";
+import colors from "./styles/utils/variables"
 
 const socialMediaData = [
   {
@@ -12,7 +13,7 @@ const socialMediaData = [
     followerType: "followers",
     stats: "12",
     isUp: true,
-    color: "hsl(208, 92%, 53%)",
+    color: colors.facebook
   },
   {
     socialMedia: "Twitter",
@@ -22,7 +23,7 @@ const socialMediaData = [
     followerType: "followers",
     stats: "99",
     isUp: true,
-    color: "hsl(203, 89%, 53%)",
+    color: colors.twitter,
   },
   {
     socialMedia: "Instagram",
@@ -32,7 +33,7 @@ const socialMediaData = [
     followerType: "followers",
     stats: "1099",
     isUp: true,
-    color: "linear-gradient(90deg, hsl(37, 97%, 70%), hsl(329, 70%, 58%))",
+    color: colors.instagram,
   },
   {
     socialMedia: "Youtube",
@@ -42,7 +43,7 @@ const socialMediaData = [
     followerType: "subscribers",
     stats: "144",
     isUp: false,
-    color: "hsl(348, 97%, 39%)",
+    color: colors.youTube,
   },
 ];
 

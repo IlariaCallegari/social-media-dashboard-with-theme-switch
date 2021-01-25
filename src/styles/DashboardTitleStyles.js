@@ -1,21 +1,23 @@
 import { createUseStyles } from "react-jss";
+import colors from "./utils/variables"
 
 const useStyles = createUseStyles({
-  dashboardTitle: {
+  dashboardTitle:(isDark)=>({
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
-  },
+    color: isDark? "inherit" : colors.veryDarkBlue,
+  }),
   dashboardHeading: {
     fontSize: "1.75rem",
   },
   dashboardSubheading: {
-    color: "hsl(228, 34%, 66%)",
+    color: colors.desaturatedBlueText,
     marginTop: "0.1rem",
   },
   dashboardTheme: { 
     width: "8.5rem",
-    color: "hsl(228, 34%, 66%)",
+    color: colors.desaturatedBlueText,
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center"

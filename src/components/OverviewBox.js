@@ -5,8 +5,8 @@ import down from "../images/icon-down.svg";
 import {ThemeContext} from "../contexts/ThemeContext"
 
 function OverviewBox({ likes, views, logo, socialMedia }) {
-  const {theme} = useContext(ThemeContext)
-  const classes = useStyles({likes, views, theme});
+  const {isDark} = useContext(ThemeContext)
+  const classes = useStyles({likes, views, isDark});
   const { box, total, imgLogo, arrow, likesStats, viewsStats} = classes;
   return (
     <React.Fragment>

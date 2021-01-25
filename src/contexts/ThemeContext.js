@@ -3,13 +3,13 @@ import React, { createContext, useState} from "react";
 const ThemeContext = createContext();
 
 function ThemeProvider(props) {
-    const [theme, setTheme] = useState(true);
+    const [isDark, setTheme] = useState(true);
     const toggleTheme = () => {
-        setTheme(!theme);
+        setTheme(!isDark);
     }
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <ThemeContext.Provider value={{ isDark, toggleTheme }}>
       {props.children}
     </ThemeContext.Provider>
   );
