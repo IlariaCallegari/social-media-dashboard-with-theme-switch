@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import DashboardTitle from "./DashboardTitle";
+import Navbar from "./Navbar";
 import SocialMediaBox from "./SocialMediaBox";
 import OverviewBox from "./OverviewBox";
 import { ThemeContext } from "../contexts/ThemeContext";
@@ -10,10 +10,10 @@ function Dashboard() {
   //get theme and set the state
   const { toggleTheme, isDark } = useContext(ThemeContext);
   const [state, setState] = useState({ isChecked: true });
-  
+
   //grabs the classes from the stylesheet
   const classes = useStyles(isDark);
-  const { container, overview, overviewContainer, dashboard } = classes;
+  const { container, overview, container2, dashboard } = classes;
 
   //handle switch change
   const handleChange = (e) => {
@@ -21,10 +21,8 @@ function Dashboard() {
     toggleTheme();
   };
   return (
-    <div
-      className={dashboard}
-    >
-      <DashboardTitle handleChange={handleChange} isChecked={state.isChecked} />
+    <div className={dashboard}>
+      <Navbar handleChange={handleChange} isChecked={state.isChecked} />
 
       <section className={container}>
         {socialMediaData.map((social) => (
@@ -42,7 +40,7 @@ function Dashboard() {
         ))}
       </section>
       <h2 className={overview}>Overview - Today</h2>
-      <section className={overviewContainer}>
+      <section className={container2}>
         {overviewData.map((social) => (
           <OverviewBox
             key={social.SocialMedia}

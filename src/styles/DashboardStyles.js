@@ -14,6 +14,10 @@ const useStyles = createUseStyles({
     justifyContent: "space-between",
     marginTop: "3.5%",
     marginBottom: "4%",
+    "@media(max-width: 375px)": {
+      flexDirection: "column",
+      marginTop: "10%",
+    },
   },
   overview: (isDark) => ({
     fontWeight: "700",
@@ -21,11 +25,25 @@ const useStyles = createUseStyles({
     marginBottom: "1.5%",
     color: isDark ? colors.white : colors.darkGrayishBlueText,
   }),
-  overviewContainer: {
+  container2: {
     display: "flex",
     flexWrap: "wrap",
     justifyContent: "space-between",
     height: "40%",
+    "@media(max-width: 375px)": {
+      flexDirection: "column",
+      minHeight: "100vh",
+      flexWrap: "nowrap",
+      overflow: "hidden",
+    },
+  },
+  "@media(max-width: 375px)": {
+    dashboard: (isDark) => ({
+      padding: "5%",
+    }),
+    overview: (isDark) => ({
+      marginBottom: "6%"
+    })
   },
 });
 

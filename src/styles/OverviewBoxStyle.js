@@ -15,7 +15,9 @@ const useStyles = createUseStyles({
     alignItems: "center",
     borderRadius: 5,
     "&:hover": {
-      backgroundColor: isDark ? colors.cardOnHoverDark : colors.cardOnHoverLight,
+      backgroundColor: isDark
+        ? colors.cardOnHoverDark
+        : colors.cardOnHoverLight,
     },
     "& > div": {
       width: "50%",
@@ -50,6 +52,17 @@ const useStyles = createUseStyles({
   viewsStats: ({ views }) => ({
     color: views.isUp ? colors.limeGreen : colors.brightRed,
   }),
+  "@media(max-width: 375px)": {
+    box: ({ color }) => ({
+      width: "100%",
+      minHeight: "15%",
+      marginBottom: "1.5rem",
+      "& > div": {
+        paddingTop: "0.5rem",
+        paddingBottom: "0.5rem",
+      },
+    }),
+  },
 });
 
 export default useStyles;

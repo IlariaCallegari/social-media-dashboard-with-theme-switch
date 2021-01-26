@@ -42,8 +42,12 @@ const DashSwitch = withStyles((theme) => ({
   },
   track: {
     borderRadius: 26 / 2,
-    backgroundColor: "hsl(230, 22%, 74%)",
+    background: "hsl(230, 22%, 74%)",
     opacity: 1,
+    "&:hover": {
+      background:
+        "linear-gradient(45deg, hsl(210, 78%, 56%) 10%, hsl(146, 68%, 55%))",
+    },
   },
   checked: {},
 }))(({ classes, ...props }) => {

@@ -11,3 +11,10 @@
 body {
   color: hsl(0, 0%, 100%);
 }
+
+@media (max-width: 375px) {
+  * {
+    font-size: 0.75rem; /*12 px */
+    overflow: auto;
+  }
+}

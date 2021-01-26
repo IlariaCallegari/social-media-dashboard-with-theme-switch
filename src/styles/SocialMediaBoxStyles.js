@@ -63,6 +63,12 @@ const useStyles = createUseStyles({
       marginLeft: "0.1rem",
     },
   }),
+  "@media(max-width: 375px)": {
+    externalBox: ({color}) => ({
+      width: "100%",
+      marginBottom: "2rem"
+    })
+  }
 });
 
 export default useStyles;
