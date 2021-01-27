@@ -2,8 +2,9 @@ import React, { useState, useContext } from "react";
 import Navbar from "./Navbar";
 import SocialMediaBox from "./SocialMediaBox";
 import OverviewBox from "./OverviewBox";
-import { ThemeContext } from "../contexts/ThemeContext";
+import Attribution from "./Attribution";
 import useStyles from "../styles/DashboardStyles";
+import { ThemeContext } from "../contexts/ThemeContext";
 import { socialMediaData, overviewData } from "../SocialMediaData";
 
 function Dashboard() {
@@ -51,6 +52,7 @@ function Dashboard() {
           />
         ))}
       </div>
+      <Attribution />
     </div>
   );
 }
