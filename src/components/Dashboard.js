@@ -24,7 +24,7 @@ function Dashboard() {
     <div className={dashboard}>
       <Navbar handleChange={handleChange} isChecked={state.isChecked} />
 
-      <section className={container}>
+      <div className={container}>
         {socialMediaData.map((social) => (
           <SocialMediaBox
             logo={social.logo}
@@ -38,9 +38,9 @@ function Dashboard() {
             key={social.socialMedia}
           />
         ))}
-      </section>
+      </div>
       <h2 className={overview}>Overview - Today</h2>
-      <section className={container2}>
+      <div className={container2}>
         {overviewData.map((social) => (
           <OverviewBox
             key={social.SocialMedia}
@@ -50,7 +50,7 @@ function Dashboard() {
             socialMedia={social.socialMedia}
           />
         ))}
-      </section>
+      </div>
     </div>
   );
 }
