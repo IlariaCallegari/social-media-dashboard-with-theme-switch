@@ -6,7 +6,9 @@ const useStyles = createUseStyles({
     height: "100%",
     width: "100%",
     padding: "2.25rem 10.125rem 2.25rem 12.5rem",
-    backgroundColor: isDark ? colors.veryDarkBlue : colors.white,
+    backgroundImage: isDark
+      ? `linear-gradient(${colors.veryDarkBlueTop} 28%, ${colors.veryDarkBlue} 28%)`
+      : `linear-gradient(${colors.veryPaleBlueTopBG} 28%, ${colors.white} 28%)`,
   }),
   container: {
     display: "flex",
@@ -40,10 +42,13 @@ const useStyles = createUseStyles({
   "@media(max-width: 375px)": {
     dashboard: (isDark) => ({
       padding: "5%",
+      backgroundImage: isDark
+      ? `linear-gradient(${colors.veryDarkBlueTop} 24%, ${colors.veryDarkBlue} 24%)`
+      : `linear-gradient(${colors.veryPaleBlueTopBG} 24%, ${colors.white} 24%)`,
     }),
     overview: (isDark) => ({
-      marginBottom: "6%"
-    })
+      marginBottom: "2%",
+    }),
   },
 });
 
